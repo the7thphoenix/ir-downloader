@@ -24,10 +24,11 @@ permissions:
 jobs:
   download-and-commit:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: 🔄 دریافت کد مخزن
         uses: actions/checkout@v4
-
       - name: ⚙️ نصب ابزارها
         run: |
           sudo apt-get update
